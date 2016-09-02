@@ -90,8 +90,8 @@ To get started with this project, use a Git client to clone this repository to y
 
 ### Dependencies
 
-[**Jackson JSON and XML Processor project**](http://wiki.fasterxml.com/JacksonHome) - pelias-client-library uses Jackson for parsing JSON.
-[**GeoJson POJOs for Jackson**](https://github.com/opendatalab-de/geojson-jackson) - Plain-Old-Java-Objects (POJOs) used for Jackson data binding of GeoJSON elements to Java objects.
+* [**Jackson JSON and XML Processor project**](http://wiki.fasterxml.com/JacksonHome) - For parsing JSON.
+* [**GeoJson POJOs for Jackson**](https://github.com/opendatalab-de/geojson-jackson) - Plain-Old-Java-Objects (POJOs) used for Jackson data binding of GeoJSON elements to Java objects.
 
 ### Build the project
 
