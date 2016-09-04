@@ -72,7 +72,7 @@ dependencies {
 The below example shows how to call the Pelias Search API.
 
 ~~~
-String apiKey = "search-FdGeV9U";
+String apiKey = "YourKeyHere";
 String text = "London";
 PeliasResponse response = new PeliasRequest.Builder(apiKey, text).build().call();
 System.out.println(response.toString());
