@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package edu.cutr.pelias.model;
+package edu.usf.cutr.pelias.model;
 
 /**
  * Created by Sean on 8/31/2016.

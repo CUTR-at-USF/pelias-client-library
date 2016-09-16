@@ -13,9 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package edu.cutr.pelias;
+package edu.usf.cutr.pelias;
 
-import edu.cutr.pelias.model.Geocoding;
+import edu.usf.cutr.pelias.model.Geocoding;
 import org.geojson.Feature;
 
 import java.util.Arrays;
