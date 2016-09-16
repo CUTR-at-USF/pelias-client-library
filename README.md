@@ -12,7 +12,7 @@ To add this library to your project using Maven, add the following to your `pom.
 <dependencies>
   <!-- Pelias Client Library -->
   <dependency>
-      <groupId>edu.usf.cutr.pelias</groupId>    
+      <groupId>edu.cutr.pelias</groupId>    
       <artifactId>pelias-client-library</artifactId>    
       <version>1.0.0-SNAPSHOT</version>
   </dependency>
@@ -22,11 +22,11 @@ To add this library to your project using Maven, add the following to your `pom.
 <repositories>
     <repository>
         <id>cutr-snapshots</id>
-        <url>https://github.com/CUTR-at-USF/cutr-mvn-repo/raw/master/snapshots</url>
+        <url>https://raw.githubusercontent.com/CUTR-at-USF/cutr-mvn-repo/master/snapshots</url>
     </repository>        
     <repository>
         <id>cutr-releases</id>
-        <url>https://github.com/CUTR-at-USF/cutr-mvn-repo/raw/master/releases</url>
+        <url>https://raw.githubusercontent.com/CUTR-at-USF/cutr-mvn-repo/master/releases</url>
     </repository>  
 </repositories>
 ~~~
