@@ -1,9 +1,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-	<groupId>edu.usf.cutr</groupId>
-	<artifactId>pelias-client-library</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+    <groupId>edu.usf.cutr</groupId>
+    <artifactId>pelias-client-library</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
     <name>Pelias Client Library</name>
     <description>A Java client library for the Pelias geocoder</description>
 
@@ -24,10 +24,10 @@
             <version>2.7.3</version>
         </dependency>
         <dependency>
-			<groupId>de.grundid.opendatalab</groupId>
-			<artifactId>geojson-jackson</artifactId>
-			<version>1.6</version>
-		</dependency>
+            <groupId>de.grundid.opendatalab</groupId>
+            <artifactId>geojson-jackson</artifactId>
+            <version>1.6</version>
+        </dependency>
     </dependencies>
 
     <build>
@@ -43,14 +43,14 @@
         </plugins>
     </build>
 
-	<distributionManagement>
-		<repository>
-			<id>repo</id>
-			<url>https://github.com/CUTR-at-USF/cutr-mvn-repo/raw/master/releases</url>
-		</repository>
-		<snapshotRepository>
-			<id>snapshot-repo</id>
-			<url>https://github.com/CUTR-at-USF/cutr-mvn-repo/raw/master/snapshots</url>
-		</snapshotRepository>
-	</distributionManagement>
+    <distributionManagement>
+        <repository>
+            <id>repo</id>
+            <url>https://github.com/CUTR-at-USF/cutr-mvn-repo/raw/master/releases</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshot-repo</id>
+            <url>https://github.com/CUTR-at-USF/cutr-mvn-repo/raw/master/snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
 </project>
