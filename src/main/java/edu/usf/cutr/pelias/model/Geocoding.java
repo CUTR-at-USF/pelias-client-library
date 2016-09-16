@@ -16,7 +16,7 @@
 package edu.usf.cutr.pelias.model;
 
 /**
- * Created by Sean on 8/31/2016.
+ * POJO class for Geocoding element in Pelias response
  */
 public class Geocoding {
     String attribution;
