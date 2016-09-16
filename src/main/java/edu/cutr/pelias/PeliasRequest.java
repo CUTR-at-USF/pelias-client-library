@@ -23,6 +23,7 @@ import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+
 /**
  * Encapsulates a request to the Mapzen Pelias Search API - https://mapzen.com/documentation/search/search/
  */
@@ -37,7 +38,16 @@ public class PeliasRequest {
     public static class Builder {
         private String mApiKey;
         private String mText;
-
+        
+        private String mSources;
+        private Double mFocusPointLat;
+        private Double mFocusPointLon;
+        private String mBoundaryMinLat;
+        private String mBoundaryMinLon;
+        private String mBoundaryMaxLat;
+        private String mBoundaryMaxLon;
+        private Integer mSize;
+    
         /**
          * A Builder for making a request to the Search API
          * @param apiKey the API key to be used in the request
@@ -48,12 +58,62 @@ public class PeliasRequest {
             mText = text;
         }
 
-        public PeliasRequest build() {
+        public Builder setSources(String sources) {
+            mSources = sources;
+            return this;
+        }
+        public Builder setFocusPoint(Double lat, Double lon) {
+            mFocusPointLat = lat;
+            mFocusPointLon = lon;
+            return this;
+        }
+        public Builder setBoundaryRect(String minLat, String minLon, String maxLat, String maxLon) {
+            mBoundaryMinLat = minLat;
+            mBoundaryMinLon = minLon;
+            mBoundaryMaxLat = maxLat;
+            mBoundaryMaxLon = maxLon;
+            return this;
+        }
+        public Builder setSize(Integer size) {
+            mSize = size;
+            return this;
+        }
+        
+        public PeliasRequest build() {            
             StringBuilder builder = new StringBuilder();
             builder.append("https://search.mapzen.com/v1/search?text=");
             builder.append(mText);
             builder.append("&api_key=");
             builder.append(mApiKey);
+            
+            if (mSources != null) {
+                builder.append("&sources=");
+                builder.append(mSources);
+            }
+        
+            if (mSize != null) {
+                builder.append("&size=");
+                builder.append(mSize);                
+            }
+            
+            if (mFocusPointLat != null && mFocusPointLon != null) {
+                builder.append("&focus.point.lat=");
+                builder.append(mFocusPointLat);                
+                builder.append("&focus.point.lon=");
+                builder.append(mFocusPointLon);                                
+            }
+            
+            if (mBoundaryMinLat != null) {
+                builder.append("&boundary.rect.min_lat=");
+                builder.append(mBoundaryMinLat);
+                builder.append("&boundary.rect.min_lon=");
+                builder.append(mBoundaryMinLon);
+                builder.append("&boundary.rect.max_lat=");
+                builder.append(mBoundaryMaxLat);
+                builder.append("&boundary.rect.max_lon=");
+                builder.append(mBoundaryMaxLon);                
+            }
+                                                
             return new PeliasRequest(builder.toString());
         }
     }
