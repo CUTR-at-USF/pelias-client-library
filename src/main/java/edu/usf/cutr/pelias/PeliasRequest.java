@@ -48,7 +48,7 @@ public class PeliasRequest {
         private Integer mSize;
 
         /**
-         * A Builder for making a request to the Search API
+         * A Builder for making a request to the Pelias Search API
          *
          * @param apiKey the API key to be used in the request
          * @param text   the text to search for
@@ -58,17 +58,57 @@ public class PeliasRequest {
             mText = text;
         }
 
+        /**
+         * Sets the source to search.  Mapzen Search brings together data from multiple open sources and combines a
+         * variety of place types into a single database, allowing you options for selecting the dataset you want to
+         * search.
+         * <p>
+         * If you wanted to combine several data sources together, set sources to a comma separated list of desired
+         * source names. Note that the order of the comma separated values does not impact sorting order of the results;
+         * they are still sorted based on the linguistic match quality to text and distance from focus, if you specified
+         * one.
+         * <p>
+         * Source           Name	        Short name
+         * OpenStreetMap	openstreetmap	osm
+         * OpenAddresses	openaddresses	oa
+         * Who’s on First	whosonfirst	    wof
+         * GeoNames	        geonames	    gn
+         * <p>
+         * See https://mapzen.com/documentation/search/data-sources/ for more details.
+         *
+         * @param sources the source to search.  Valid values as of Sept. 2016 are osm, oa, wof, and gn (see above).
+         * @return this same Builder so Builder calls can be chained
+         */
         public Builder setSources(String sources) {
             mSources = sources;
             return this;
         }
 
+        /**
+         * Sets a focus point for this search.  By specifying a focus.point, nearby places will be scored higher
+         * depending on how close they are to the focus.point so that places with higher scores will appear higher in
+         * the results list. The effect of this scoring boost diminishes to zero after 100 kilometers away from the
+         * focus.point. After all the nearby results have been found, additional results will come from the rest of the
+         * world, without any further location-based prioritization.
+         *
+         * @param lat Latitude of the focus point
+         * @param lon Longitude of the focus point
+         * @return this same Builder so Builder calls can be chained
+         */
         public Builder setFocusPoint(Double lat, Double lon) {
             mFocusPointLat = lat;
             mFocusPointLon = lon;
             return this;
         }
 
+        /**
+         * Sets the bounding box in which to search
+         * @param minLat Minimum latitude of the bounding box
+         * @param minLon Minimum longitude of the bounding box
+         * @param maxLat Maximum latitude of the bounding box
+         * @param maxLon Maximum longitude of the bounding box
+         * @return this same Builder so Builder calls can be chained
+         */
         public Builder setBoundaryRect(String minLat, String minLon, String maxLat, String maxLon) {
             mBoundaryMinLat = minLat;
             mBoundaryMinLon = minLon;
@@ -77,11 +117,20 @@ public class PeliasRequest {
             return this;
         }
 
+        /**
+         * Sets the number of results to return from the API (default is 10 if unset)
+         * @param size the number of results to return from the API (default is 10 if unset)
+         * @return this same Builder so Builder calls can be chained
+         */
         public Builder setSize(Integer size) {
             mSize = size;
             return this;
         }
 
+        /**
+         * Builds the PeliasRequest using the specified parameters
+         * @return the PeliasRequest using the specified parameters
+         */
         public PeliasRequest build() {
             StringBuilder builder = new StringBuilder();
             builder.append("https://search.mapzen.com/v1/search?text=");
@@ -129,6 +178,11 @@ public class PeliasRequest {
         }
     }
 
+    /**
+     * Makes the request to the Pelias Search API, and returns a PeliasResponse parsed from the returned JSON
+     * @return a PeliasResponse parsed from the returned JSON
+     * @throws IOException
+     */
     public PeliasResponse call() throws IOException {
         return mReader.readValue(mUrl.openStream());
     }
