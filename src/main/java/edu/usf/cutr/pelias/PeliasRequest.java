@@ -38,6 +38,7 @@ public class PeliasRequest {
     private URL mUrl;
 
     public static class Builder {
+        private String mApiEndPoint = "https://search.mapzen.com/v1/search";
         private String mApiKey;
         private String mText;
         private String mSources;
@@ -130,12 +131,25 @@ public class PeliasRequest {
         }
 
         /**
+         * Sets the API endpoint that will be used for the API call.  By default https://search.mapzen.com/v1/search
+         * will be used.
+         *
+         * @param apiEndpoint the API endpoint to be used in the API call
+         * @return this same Builder so Builder calls can be chained
+         */
+        public Builder setApiEndpoint(String apiEndpoint) {
+            mApiEndPoint = apiEndpoint;
+            return this;
+        }
+
+        /**
          * Builds the PeliasRequest using the specified parameters
          * @return the PeliasRequest using the specified parameters
          */
         public PeliasRequest build() {
             StringBuilder builder = new StringBuilder();
-            builder.append("https://search.mapzen.com/v1/search?text=");
+            builder.append(mApiEndPoint);
+            builder.append("?text=");
             builder.append(mText);
             builder.append("&api_key=");
             builder.append(mApiKey);
