@@ -31,12 +31,18 @@ public class PeliasTest extends TestCase {
 
     private static final String SIMPLE_SEARCH_ENDPOINT = "https://raw.githubusercontent.com/CUTR-at-USF/pelias-client-library/master/src/test/resources/simple-search.json";
     private static final String SEARCH_WITH_FOCUS_ENDPOINT = "https://raw.githubusercontent.com/CUTR-at-USF/pelias-client-library/master/src/test/resources/search-with-focus.json";
+    private static final String API_KEY = "search-FdGeV9U";
+    private static final String TEXT = "subway";
+
+    @Override
+    protected void setUp() {
+        // For tests, make sure that we can parse all known properties
+        PeliasRequest.setFailOnUnknownProperties(true);
+    }
 
     @Test
     public void testSimpleSearch() throws IOException {
-        String apiKey = "search-FdGeV9U";
-        String text = "London";
-        PeliasResponse r = new PeliasRequest.Builder(apiKey, text)
+        PeliasResponse r = new PeliasRequest.Builder(API_KEY, TEXT)
                 .setApiEndpoint(SIMPLE_SEARCH_ENDPOINT)
                 .build().call();
         assertEquals("0.1", r.getGeocoding().getVersion());
@@ -90,11 +96,23 @@ public class PeliasTest extends TestCase {
 
     @Test
     public void testSearchWithFocus() throws IOException {
-        String apiKey = "search-FdGeV9U";
-        String text = "London";
-        PeliasResponse r = new PeliasRequest.Builder(apiKey, text)
+        PeliasResponse r = new PeliasRequest.Builder(API_KEY, TEXT)
                 .setApiEndpoint(SEARCH_WITH_FOCUS_ENDPOINT)
                 .build().call();
+
+        assertEquals("0.1", r.getGeocoding().getVersion());
+        assertEquals("https://search.mapzen.com/v1/attribution", r.getGeocoding().getAttribution());
+        assertEquals("subway", r.getGeocoding().getQuery().getText());
+        assertEquals(10, r.getGeocoding().getQuery().getSize());
+        assertEquals(false, r.getGeocoding().getQuery().isPrivate());
+        assertEquals(28.061062f, r.getGeocoding().getQuery().getFocusPointLat());
+        assertEquals(-82.4132f, r.getGeocoding().getQuery().getFocusPointLon());
+        assertEquals(20, r.getGeocoding().getQuery().getQuerySize());
+        assertEquals("Pelias", r.getGeocoding().getEngine().getName());
+        assertEquals("Mapzen", r.getGeocoding().getEngine().getAuthor());
+        assertEquals("1.0", r.getGeocoding().getEngine().getVersion());
+        assertEquals(1473772363957L, r.getGeocoding().getTimestamp());
+        assertEquals("FeatureCollection", r.getType());
 
         assertEquals("0.1", r.getGeocoding().getVersion());
         assertEquals("https://search.mapzen.com/v1/attribution", r.getGeocoding().getAttribution());

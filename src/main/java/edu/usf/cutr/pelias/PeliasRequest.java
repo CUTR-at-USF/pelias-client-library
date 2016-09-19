@@ -31,9 +31,9 @@ import java.net.URL;
  */
 public class PeliasRequest {
 
-    private static final ObjectMapper mMapper = new ObjectMapper()
+    private static ObjectMapper mMapper = new ObjectMapper()
             .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-    private static final ObjectReader mReader = mMapper.readerFor(PeliasResponse.class);
+    private static ObjectReader mReader = mMapper.readerFor(PeliasResponse.class);
 
     private URL mUrl;
 
@@ -225,6 +225,18 @@ public class PeliasRequest {
         } else {
             return response;
         }
+    }
+
+    /**
+     * Sets the Jackson value for "fail on unknown properties" for all PeliasRequest instances.  Note that while this
+     * method is threadsafe, it does not guarantee that existing instances of PeliasRequest using the ObjectReader won't
+     * be negatively impacted / interrupted.  Default is false.
+     *
+     * @param value true if Jackson should fail on unknown properties, false of it should not (default is false)
+     */
+    public synchronized static void setFailOnUnknownProperties(boolean value) {
+        mMapper = new ObjectMapper().configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, value);
+        mReader = mMapper.readerFor(PeliasResponse.class);
     }
 
     /**

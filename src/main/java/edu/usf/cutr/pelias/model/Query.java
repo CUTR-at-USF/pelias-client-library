@@ -15,6 +15,10 @@
  */
 package edu.usf.cutr.pelias.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.util.Arrays;
+
 /**
  * POJO class for Query element in Pelias response
  */
@@ -22,11 +26,16 @@ public class Query {
     float boundaryCircleLat;
     float boundaryCircleLon;
     float boundaryCircleRadius;
-    float pointLat;
-    float pointLon;
+
+    @JsonProperty("focus.point.lat")
+    float focusPointLat;
+    @JsonProperty("focus.point.lon")
+    float focusPointLon;
+
     boolean isPrivate;
     int querySize;
     int size;
+    String[] sources;
     String text;
 
     public String getText() {
@@ -61,20 +70,20 @@ public class Query {
         this.boundaryCircleRadius = boundaryCircleRadius;
     }
 
-    public float getPointLat() {
-        return pointLat;
+    public float getFocusPointLat() {
+        return focusPointLat;
     }
 
-    public void setPointLat(float pointLat) {
-        this.pointLat = pointLat;
+    public void setFocusPointLat(float pointLat) {
+        this.focusPointLat = pointLat;
     }
 
-    public float getPointLon() {
-        return pointLon;
+    public float getFocusPointLon() {
+        return focusPointLon;
     }
 
-    public void setPointLon(float pointLon) {
-        this.pointLon = pointLon;
+    public void setFocusPointLon(float pointLon) {
+        this.focusPointLon = pointLon;
     }
 
     public boolean isPrivate() {
@@ -101,17 +110,26 @@ public class Query {
         this.size = size;
     }
 
+    public String[] getSources() {
+        return sources;
+    }
+
+    public void setSources(String[] sources) {
+        this.sources = sources;
+    }
+
     @Override
     public String toString() {
         return "Query{" +
                 "boundaryCircleLat=" + boundaryCircleLat +
                 ", boundaryCircleLon=" + boundaryCircleLon +
                 ", boundaryCircleRadius=" + boundaryCircleRadius +
-                ", pointLat=" + pointLat +
-                ", pointLon=" + pointLon +
+                ", focusPointLat=" + focusPointLat +
+                ", focusPointLon=" + focusPointLon +
                 ", isPrivate=" + isPrivate +
                 ", querySize=" + querySize +
                 ", size=" + size +
+                ", sources=" + Arrays.toString(sources) +
                 ", text='" + text + '\'' +
                 '}';
     }
