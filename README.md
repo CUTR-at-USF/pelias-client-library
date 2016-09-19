@@ -39,11 +39,11 @@ repositories {
     mavenCentral()
     maven {
         // CUTR SNAPSHOTs
-        url "https://github.com/CUTR-at-USF/cutr-mvn-repo/raw/master/snapshots"
+        url "https://raw.githubusercontent.com/CUTR-at-USF/cutr-mvn-repo/master/snapshots"
     }
     maven {
         // CUTR Releases
-        url "https://github.com/CUTR-at-USF/cutr-mvn-repo/raw/master/releases"
+        url "https://raw.githubusercontent.com/CUTR-at-USF/cutr-mvn-repo/master/releases"
     }
 }
 
