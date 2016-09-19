@@ -1,0 +1,364 @@
+{
+  "geocoding": {
+    "version": "0.1",
+    "attribution": "https://search.mapzen.com/v1/attribution",
+    "query": {
+      "text": "subway",
+      "size": 10,
+      "sources": [
+        "openstreetmap"
+      ],
+      "private": false,
+      "focus.point.lat": 28.061062,
+      "focus.point.lon": -82.4132,
+      "querySize": 20
+    },
+    "engine": {
+      "name": "Pelias",
+      "author": "Mapzen",
+      "version": "1.0"
+    },
+    "timestamp": 1473772363957
+  },
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.410544,
+          28.0597
+        ]
+      },
+      "properties": {
+        "id": "node:570760825",
+        "gid": "openstreetmap:venue:node:570760825",
+        "layer": "venue",
+        "source": "openstreetmap",
+        "source_id": "node:570760825",
+        "name": "Subway",
+        "confidence": 0.95,
+        "distance": 0.302,
+        "country": "United States",
+        "country_gid": "whosonfirst:country:85633793",
+        "country_a": "USA",
+        "region": "Florida",
+        "region_gid": "whosonfirst:region:85688651",
+        "region_a": "FL",
+        "county": "Hillsborough County",
+        "county_gid": "whosonfirst:county:102085773",
+        "locality": "Tampa",
+        "locality_gid": "whosonfirst:locality:85931789",
+        "neighbourhood": "Plesant Dale",
+        "neighbourhood_gid": "whosonfirst:neighbourhood:85889751",
+        "label": "Subway, Tampa, FL, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.396939,
+          28.053915
+        ]
+      },
+      "properties": {
+        "id": "node:832851671",
+        "gid": "openstreetmap:venue:node:832851671",
+        "layer": "venue",
+        "source": "openstreetmap",
+        "source_id": "node:832851671",
+        "name": "Subway",
+        "confidence": 0.946,
+        "distance": 1.784,
+        "country": "United States",
+        "country_gid": "whosonfirst:country:85633793",
+        "country_a": "USA",
+        "region": "Florida",
+        "region_gid": "whosonfirst:region:85688651",
+        "region_a": "FL",
+        "county": "Hillsborough County",
+        "county_gid": "whosonfirst:county:102085773",
+        "locality": "Temple Terrace",
+        "locality_gid": "whosonfirst:locality:85931783",
+        "neighbourhood": "Terrace Walk",
+        "neighbourhood_gid": "whosonfirst:neighbourhood:420512645",
+        "label": "Subway, Temple Terrace, FL, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.429995,
+          28.069603
+        ]
+      },
+      "properties": {
+        "id": "node:821355897",
+        "gid": "openstreetmap:venue:node:821355897",
+        "layer": "venue",
+        "source": "openstreetmap",
+        "source_id": "node:821355897",
+        "name": "Subway",
+        "street": "E Fletcher Ave",
+        "postalcode": "33612",
+        "confidence": 0.946,
+        "distance": 1.903,
+        "country": "United States",
+        "country_gid": "whosonfirst:country:85633793",
+        "country_a": "USA",
+        "region": "Florida",
+        "region_gid": "whosonfirst:region:85688651",
+        "region_a": "FL",
+        "county": "Hillsborough County",
+        "county_gid": "whosonfirst:county:102085773",
+        "locality": "University",
+        "locality_gid": "whosonfirst:locality:85933729",
+        "neighbourhood": "Hamner's W E Towering Pines",
+        "neighbourhood_gid": "whosonfirst:neighbourhood:85889713",
+        "label": "Subway, University, FL, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.39385,
+          28.03057
+        ]
+      },
+      "properties": {
+        "id": "node:1063930559",
+        "gid": "openstreetmap:venue:node:1063930559",
+        "layer": "venue",
+        "source": "openstreetmap",
+        "source_id": "node:1063930559",
+        "name": "Subway",
+        "confidence": 0.941,
+        "distance": 3.878,
+        "country": "United States",
+        "country_gid": "whosonfirst:country:85633793",
+        "country_a": "USA",
+        "region": "Florida",
+        "region_gid": "whosonfirst:region:85688651",
+        "region_a": "FL",
+        "county": "Hillsborough County",
+        "county_gid": "whosonfirst:county:102085773",
+        "locality": "Temple Terrace",
+        "locality_gid": "whosonfirst:locality:85931783",
+        "neighbourhood": "Downtown Temple Terrace",
+        "neighbourhood_gid": "whosonfirst:neighbourhood:85896235",
+        "label": "Subway, Temple Terrace, FL, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.399458,
+          28.100098
+        ]
+      },
+      "properties": {
+        "id": "node:1033910277",
+        "gid": "openstreetmap:venue:node:1033910277",
+        "layer": "venue",
+        "source": "openstreetmap",
+        "source_id": "node:1033910277",
+        "name": "Subway",
+        "confidence": 0.939,
+        "distance": 4.532,
+        "country": "United States",
+        "country_gid": "whosonfirst:country:85633793",
+        "country_a": "USA",
+        "region": "Florida",
+        "region_gid": "whosonfirst:region:85688651",
+        "region_a": "FL",
+        "county": "Hillsborough County",
+        "county_gid": "whosonfirst:county:102085773",
+        "locality": "Tampa",
+        "locality_gid": "whosonfirst:locality:85931789",
+        "neighbourhood": "Tampa Palms",
+        "neighbourhood_gid": "whosonfirst:neighbourhood:85873765",
+        "label": "Subway, Tampa, FL, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.38619,
+          27.99569
+        ]
+      },
+      "properties": {
+        "id": "node:3133145198",
+        "gid": "openstreetmap:venue:node:3133145198",
+        "layer": "venue",
+        "source": "openstreetmap",
+        "source_id": "node:3133145198",
+        "name": "Subway",
+        "confidence": 0.731,
+        "distance": 7.716,
+        "country": "United States",
+        "country_gid": "whosonfirst:country:85633793",
+        "country_a": "USA",
+        "region": "Florida",
+        "region_gid": "whosonfirst:region:85688651",
+        "region_a": "FL",
+        "county": "Hillsborough County",
+        "county_gid": "whosonfirst:county:102085773",
+        "locality": "East Lake-Orient Park",
+        "locality_gid": "whosonfirst:locality:85933837",
+        "neighbourhood": "Golden Ring Groves",
+        "neighbourhood_gid": "whosonfirst:neighbourhood:85889703",
+        "label": "Subway, East Lake-Orient Park, FL, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.367646,
+          28.13147
+        ]
+      },
+      "properties": {
+        "id": "node:440867184",
+        "gid": "openstreetmap:venue:node:440867184",
+        "layer": "venue",
+        "source": "openstreetmap",
+        "source_id": "node:440867184",
+        "name": "Subway",
+        "confidence": 0.728,
+        "distance": 8.996,
+        "country": "United States",
+        "country_gid": "whosonfirst:country:85633793",
+        "country_a": "USA",
+        "region": "Florida",
+        "region_gid": "whosonfirst:region:85688651",
+        "region_a": "FL",
+        "county": "Hillsborough County",
+        "county_gid": "whosonfirst:county:102085773",
+        "locality": "Tampa",
+        "locality_gid": "whosonfirst:locality:85931789",
+        "neighbourhood": "Richmond Place",
+        "neighbourhood_gid": "whosonfirst:neighbourhood:85889787",
+        "label": "Subway, Tampa, FL, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.515286,
+          28.025876
+        ]
+      },
+      "properties": {
+        "id": "node:2133219790",
+        "gid": "openstreetmap:venue:node:2133219790",
+        "layer": "venue",
+        "source": "openstreetmap",
+        "source_id": "node:2133219790",
+        "name": "Subway",
+        "confidence": 0.724,
+        "distance": 10.768,
+        "country": "United States",
+        "country_gid": "whosonfirst:country:85633793",
+        "country_a": "USA",
+        "region": "Florida",
+        "region_gid": "whosonfirst:region:85688651",
+        "region_a": "FL",
+        "county": "Hillsborough County",
+        "county_gid": "whosonfirst:county:102085773",
+        "locality": "Egypt Lake-Leto",
+        "locality_gid": "whosonfirst:locality:85933833",
+        "neighbourhood": "Lago Vista",
+        "neighbourhood_gid": "whosonfirst:neighbourhood:420512809",
+        "label": "Subway, Egypt Lake-Leto, FL, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.40233,
+          27.959868
+        ]
+      },
+      "properties": {
+        "id": "node:444550780",
+        "gid": "openstreetmap:venue:node:444550780",
+        "layer": "venue",
+        "source": "openstreetmap",
+        "source_id": "node:444550780",
+        "name": "Subway",
+        "confidence": 0.723,
+        "distance": 11.265,
+        "country": "United States",
+        "country_gid": "whosonfirst:country:85633793",
+        "country_a": "USA",
+        "region": "Florida",
+        "region_gid": "whosonfirst:region:85688651",
+        "region_a": "FL",
+        "county": "Hillsborough County",
+        "county_gid": "whosonfirst:county:102085773",
+        "locality": "Tampa",
+        "locality_gid": "whosonfirst:locality:85931789",
+        "neighbourhood": "Sumner's L E",
+        "neighbourhood_gid": "whosonfirst:neighbourhood:85889773",
+        "label": "Subway, Tampa, FL, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -82.44067,
+          27.960452
+        ]
+      },
+      "properties": {
+        "id": "node:309162814",
+        "gid": "openstreetmap:venue:node:309162814",
+        "layer": "venue",
+        "source": "openstreetmap",
+        "source_id": "node:309162814",
+        "name": "Subway",
+        "confidence": 0.722,
+        "distance": 11.472,
+        "country": "United States",
+        "country_gid": "whosonfirst:country:85633793",
+        "country_a": "USA",
+        "region": "Florida",
+        "region_gid": "whosonfirst:region:85688651",
+        "region_a": "FL",
+        "county": "Hillsborough County",
+        "county_gid": "whosonfirst:county:102085773",
+        "locality": "Tampa",
+        "locality_gid": "whosonfirst:locality:85931789",
+        "neighbourhood": "Historic Ybor",
+        "neighbourhood_gid": "whosonfirst:neighbourhood:85873225",
+        "label": "Subway, Tampa, FL, USA"
+      }
+    }
+  ],
+  "bbox": [
+    -82.515286,
+    27.959868,
+    -82.367646,
+    28.13147
+  ]
+}

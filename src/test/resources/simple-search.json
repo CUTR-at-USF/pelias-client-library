@@ -1,0 +1,333 @@
+{
+  "geocoding": {
+    "version": "0.1",
+    "attribution": "https://search.mapzen.com/v1/attribution",
+    "query": {
+      "text": "subway",
+      "size": 10,
+      "private": false,
+      "querySize": 20
+    },
+    "engine": {
+      "name": "Pelias",
+      "author": "Mapzen",
+      "version": "1.0"
+    },
+    "timestamp": 1474249958653
+  },
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.872003,
+          35.798729
+        ]
+      },
+      "properties": {
+        "id": "node:2357470967",
+        "gid": "openstreetmap:venue:node:2357470967",
+        "layer": "venue",
+        "source": "openstreetmap",
+        "source_id": "node:2357470967",
+        "name": "Subway",
+        "confidence": 0.6,
+        "country": "United States",
+        "country_gid": "whosonfirst:country:85633793",
+        "country_a": "USA",
+        "region": "California",
+        "region_gid": "whosonfirst:region:85688637",
+        "region_a": "CA",
+        "county": "Inyo County",
+        "county_gid": "whosonfirst:county:102087577",
+        "locality": "Pearsonville",
+        "locality_gid": "whosonfirst:locality:85924831",
+        "label": "Subway, Pearsonville, CA, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          144.961816,
+          -37.708951
+        ]
+      },
+      "properties": {
+        "id": "node:2321936555",
+        "gid": "openstreetmap:venue:node:2321936555",
+        "layer": "venue",
+        "source": "openstreetmap",
+        "source_id": "node:2321936555",
+        "name": "Subway",
+        "confidence": 0.6,
+        "country": "Australia",
+        "country_gid": "whosonfirst:country:85632793",
+        "country_a": "AUS",
+        "region": "Victoria",
+        "region_gid": "whosonfirst:region:85681497",
+        "county": "Moreland (C)",
+        "county_gid": "whosonfirst:county:102049195",
+        "localadmin": "Fawkner",
+        "localadmin_gid": "whosonfirst:localadmin:404538569",
+        "locality": "Fawkner",
+        "locality_gid": "whosonfirst:locality:101932931",
+        "neighbourhood": "Fawkner",
+        "neighbourhood_gid": "whosonfirst:neighbourhood:85780617",
+        "label": "Subway, Fawkner, Victoria, Australia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -21.695692,
+          64.166014
+        ]
+      },
+      "properties": {
+        "id": "node:2300004276",
+        "gid": "openstreetmap:venue:node:2300004276",
+        "layer": "venue",
+        "source": "openstreetmap",
+        "source_id": "node:2300004276",
+        "name": "Subway",
+        "confidence": 0.6,
+        "country": "Iceland",
+        "country_gid": "whosonfirst:country:85633249",
+        "country_a": "ISL",
+        "region": "Reykjavík",
+        "region_gid": "whosonfirst:region:85672493",
+        "locality": "Mosfellsbær",
+        "locality_gid": "whosonfirst:locality:101751749",
+        "label": "Subway, Mosfellsbær, Iceland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.33372,
+          47.601597
+        ]
+      },
+      "properties": {
+        "id": "node:2351695453",
+        "gid": "openstreetmap:venue:node:2351695453",
+        "layer": "venue",
+        "source": "openstreetmap",
+        "source_id": "node:2351695453",
+        "name": "Subway",
+        "housenumber": "103",
+        "street": "Yesler Way",
+        "postalcode": "98104",
+        "confidence": 0.6,
+        "country": "United States",
+        "country_gid": "whosonfirst:country:85633793",
+        "country_a": "USA",
+        "region": "Washington",
+        "region_gid": "whosonfirst:region:85688623",
+        "region_a": "WA",
+        "county": "King County",
+        "county_gid": "whosonfirst:county:102086191",
+        "locality": "Seattle",
+        "locality_gid": "whosonfirst:locality:101730401",
+        "neighbourhood": "Pioneer Square",
+        "neighbourhood_gid": "whosonfirst:neighbourhood:85866047",
+        "label": "Subway, Seattle, WA, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -96.875784,
+          31.305592
+        ]
+      },
+      "properties": {
+        "id": "node:2375464789",
+        "gid": "openstreetmap:venue:node:2375464789",
+        "layer": "venue",
+        "source": "openstreetmap",
+        "source_id": "node:2375464789",
+        "name": "Subway",
+        "confidence": 0.6,
+        "country": "United States",
+        "country_gid": "whosonfirst:country:85633793",
+        "country_a": "USA",
+        "region": "Texas",
+        "region_gid": "whosonfirst:region:85688753",
+        "region_a": "TX",
+        "county": "Falls County",
+        "county_gid": "whosonfirst:county:102081953",
+        "locality": "Marlin",
+        "locality_gid": "whosonfirst:locality:101725287",
+        "label": "Subway, Marlin, TX, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          152.91174,
+          -26.416233
+        ]
+      },
+      "properties": {
+        "id": "node:1901948177",
+        "gid": "openstreetmap:venue:node:1901948177",
+        "layer": "venue",
+        "source": "openstreetmap",
+        "source_id": "node:1901948177",
+        "name": "Subway",
+        "confidence": 0.6,
+        "country": "Australia",
+        "country_gid": "whosonfirst:country:85632793",
+        "country_a": "AUS",
+        "region": "Queensland",
+        "region_gid": "whosonfirst:region:85681463",
+        "county": "Sunshine Coast (R)",
+        "county_gid": "whosonfirst:county:102049303",
+        "localadmin": "Cooroy",
+        "localadmin_gid": "whosonfirst:localadmin:404541825",
+        "locality": "Cooroy",
+        "locality_gid": "whosonfirst:locality:101940655",
+        "label": "Subway, Cooroy, Queensland, Australia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -74.052064,
+          4.676078
+        ]
+      },
+      "properties": {
+        "id": "node:1830387950",
+        "gid": "openstreetmap:venue:node:1830387950",
+        "layer": "venue",
+        "source": "openstreetmap",
+        "source_id": "node:1830387950",
+        "name": "Subway",
+        "confidence": 0.6,
+        "country": "Colombia",
+        "country_gid": "whosonfirst:country:85632519",
+        "country_a": "COL",
+        "region": "Bogota",
+        "region_gid": "whosonfirst:region:85670165",
+        "neighbourhood": "Gaitán",
+        "neighbourhood_gid": "whosonfirst:neighbourhood:85764647",
+        "label": "Subway, Colombia"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          20.984123,
+          52.22024
+        ]
+      },
+      "properties": {
+        "id": "node:1761184918",
+        "gid": "openstreetmap:venue:node:1761184918",
+        "layer": "venue",
+        "source": "openstreetmap",
+        "source_id": "node:1761184918",
+        "name": "Subway",
+        "housenumber": "34",
+        "street": "Grójecka",
+        "confidence": 0.6,
+        "country": "Poland",
+        "country_gid": "whosonfirst:country:85633723",
+        "country_a": "POL",
+        "region": "Mazowieckie",
+        "region_gid": "whosonfirst:region:85687257",
+        "county": "M. St. Warszawa",
+        "county_gid": "whosonfirst:county:102079951",
+        "locality": "Warszawa",
+        "locality_gid": "whosonfirst:locality:101752777",
+        "neighbourhood": "Ochota",
+        "neighbourhood_gid": "whosonfirst:neighbourhood:85898003",
+        "label": "Subway, Warszawa, Poland"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -120.696332,
+          38.740536
+        ]
+      },
+      "properties": {
+        "id": "node:1771959255",
+        "gid": "openstreetmap:venue:node:1771959255",
+        "layer": "venue",
+        "source": "openstreetmap",
+        "source_id": "node:1771959255",
+        "name": "Subway",
+        "confidence": 0.6,
+        "country": "United States",
+        "country_gid": "whosonfirst:country:85633793",
+        "country_a": "USA",
+        "region": "California",
+        "region_gid": "whosonfirst:region:85688637",
+        "region_a": "CA",
+        "county": "El Dorado County",
+        "county_gid": "whosonfirst:county:102086953",
+        "locality": "Camino",
+        "locality_gid": "whosonfirst:locality:85924045",
+        "label": "Subway, Camino, CA, USA"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -84.120376,
+          33.436675
+        ]
+      },
+      "properties": {
+        "id": "node:1783938153",
+        "gid": "openstreetmap:venue:node:1783938153",
+        "layer": "venue",
+        "source": "openstreetmap",
+        "source_id": "node:1783938153",
+        "name": "Subway",
+        "confidence": 0.6,
+        "country": "United States",
+        "country_gid": "whosonfirst:country:85633793",
+        "country_a": "USA",
+        "region": "Georgia",
+        "region_gid": "whosonfirst:region:85688535",
+        "region_a": "GA",
+        "county": "Henry County",
+        "county_gid": "whosonfirst:county:102082899",
+        "locality": "McDonough",
+        "locality_gid": "whosonfirst:locality:85936735",
+        "label": "Subway, McDonough, GA, USA"
+      }
+    }
+  ],
+  "bbox": [
+    -122.33372,
+    -37.708951,
+    152.91174,
+    64.166014
+  ]
+}
