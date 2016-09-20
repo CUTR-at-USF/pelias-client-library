@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>edu.usf.cutr</groupId>
     <artifactId>pelias-client-library</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <name>Pelias Client Library</name>
     <description>A Java client library for the Pelias geocoder</description>
 
@@ -51,12 +51,8 @@
 
     <distributionManagement>
         <repository>
-            <id>repo</id>
-            <url>https://github.com/CUTR-at-USF/cutr-mvn-repo/raw/master/releases</url>
+            <id>jCenter</id>
+            <url>https://api.bintray.com/maven/cutr-at-usf/cutr-mvn-repo/pelias-client-library/;publish=1</url>
         </repository>
-        <snapshotRepository>
-            <id>snapshot-repo</id>
-            <url>https://github.com/CUTR-at-USF/cutr-mvn-repo/raw/master/snapshots</url>
-        </snapshotRepository>
     </distributionManagement>
 </project>

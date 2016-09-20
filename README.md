@@ -14,21 +14,10 @@ To add this library to your project using Maven, add the following to your `pom.
   <dependency>
       <groupId>edu.usf.cutr.pelias</groupId>    
       <artifactId>pelias-client-library</artifactId>    
-      <version>1.0.0-SNAPSHOT</version>
+      <version>1.0.0</version>
+      <type>pom</type>
   </dependency>
 </dependencies>
-
-<!-- CUTR SNAPSHOTs/RELEASES -->
-<repositories>
-    <repository>
-        <id>cutr-snapshots</id>
-        <url>https://raw.githubusercontent.com/CUTR-at-USF/cutr-mvn-repo/master/snapshots</url>
-    </repository>        
-    <repository>
-        <id>cutr-releases</id>
-        <url>https://raw.githubusercontent.com/CUTR-at-USF/cutr-mvn-repo/master/releases</url>
-    </repository>  
-</repositories>
 ~~~
 
 If you're using Gradle and Android Studio, here's what your `build.gradle` should look like:
@@ -36,15 +25,7 @@ If you're using Gradle and Android Studio, here's what your `build.gradle` shoul
 ~~~
 ...
 repositories {
-    mavenCentral()
-    maven {
-        // CUTR SNAPSHOTs
-        url "https://raw.githubusercontent.com/CUTR-at-USF/cutr-mvn-repo/master/snapshots"
-    }
-    maven {
-        // CUTR Releases
-        url "https://raw.githubusercontent.com/CUTR-at-USF/cutr-mvn-repo/master/releases"
-    }
+    jcenter()
 }
 
 android {
@@ -62,7 +43,7 @@ android {
 dependencies {
     ...
     // Pelias Client library
-    compile 'edu.usf.cutr.pelias:pelias-client-library:1.0.0-SNAPSHOT'
+    compile 'edu.usf.cutr.pelias:pelias-client-library:1.0.0'
 }
 ~~~
 
@@ -74,7 +55,7 @@ The below example shows how to call the Pelias Search API.
 ~~~
 String apiKey = "YourKeyHere";
 String text = "London";
-PeliasResponse response = new PeliasRequest.Builder(apiKey, text).build().call();
+SearchResponse response = new SearchRequest.Builder(apiKey, text).build().call();
 System.out.println(response.toString());
 ~~~
 
@@ -102,7 +83,9 @@ Managed via Maven:
 
 ### CUTR Release Process
 
-We've set up a Maven repository to hold the artifacts from this project in a Github project - [cutr-mvn-repo](https://github.com/CUTR-at-USF/cutr-mvn-repo).
+**Snapshots**
+
+We've set up a Maven repository to hold the snapshot artifacts from this project in a Github project - [cutr-mvn-repo](https://github.com/CUTR-at-USF/cutr-mvn-repo).
 
 At CUTR, we should run the following at the command-line to create a new artifact:
 ~~~
@@ -111,4 +94,48 @@ mvn -DaltDeploymentRepository=cutr-snapshots::default::file:"/Git Projects/cutr-
 
 Then commit using Git and push new artifacts to Github.
 
-Note that the "snapshots" in the command-line should be replaced with "releases" for release versions.
+If you want to include snapshot releases in your project, you'll need to add the following to the `pom.xml` of the project you want to use it in:
+
+~~~
+<!-- CUTR SNAPSHOTs/RELEASES -->
+<repositories>
+    <repository>
+        <id>cutr-snapshots</id>
+        <url>https://raw.githubusercontent.com/CUTR-at-USF/cutr-mvn-repo/master/snapshots</url>
+    </repository>        
+</repositories>
+~~~
+
+**Releases**
+
+We're hosting releases on JCenter via [Bintray](https://bintray.com/).
+
+These are the steps for publishing the `pelias-client-library` on `jcenter` repository.
+
+###### 1 - Create an account on [Bintray](https://bintray.com/).
+###### 2 - Setup your pom.xml
+
+We need to specify the URL from which to distribute your project. 
+```
+    <distributionManagement>
+        <repository>
+            <id>jCenter</id>
+            <url>https://api.bintray.com/maven/cutr-at-usf/cutr-mvn-repo/pelias-client-library/;publish=1</url>
+        </repository>
+    </distributionManagement>
+```
+
+###### 3 - Setup your setting.xml
+We need to provide Bintray username and API Key to the Maven `settings.xml` file.  This may be under your Maven installation directory (e.g., `C:\Program Files\Apache Software Foundation\apache-maven-3.2.5\conf`).
+
+```
+<server>
+  <id>jCenter</id>
+  <username>yourjcenteraccount</username>
+  <password>***youraccount-secret-api-key***</password>
+</server>
+```
+
+###### 4 - Run maven deploy
+
+Finally, we can run ```mvn deploy``` to complete publishing.
