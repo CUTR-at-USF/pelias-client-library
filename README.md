@@ -1,4 +1,4 @@
-# pelias-client-library [![Build Status](https://travis-ci.org/CUTR-at-USF/pelias-client-library.svg?branch=master)](https://travis-ci.org/CUTR-at-USF/pelias-client-library)
+# pelias-client-library [![Build Status](https://travis-ci.org/CUTR-at-USF/pelias-client-library.svg?branch=master)](https://travis-ci.org/CUTR-at-USF/pelias-client-library) [ ![Download](https://api.bintray.com/packages/cutr-at-usf/cutr-mvn-repo/pelias-client-library/images/download.svg) ](https://bintray.com/cutr-at-usf/cutr-mvn-repo/pelias-client-library/_latestVersion)
 A Java library that makes it easy to call the [Mapzen Pelias Search API](https://mapzen.com/documentation/search/search/)
 
 ### Requirements
