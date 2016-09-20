@@ -209,7 +209,7 @@ public class PeliasRequest {
      * @param value true if Jackson should fail on unknown properties, false of it should not (default is false)
      */
     public synchronized static void setFailOnUnknownProperties(boolean value) {
-        mMapper = new ObjectMapper().configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, value);
+        mMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, value);
         mReader = mMapper.readerFor(PeliasResponse.class);
     }
 
