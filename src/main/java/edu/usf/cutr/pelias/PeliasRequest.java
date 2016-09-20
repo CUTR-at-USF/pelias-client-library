@@ -19,9 +19,7 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectReader;
 
-import java.io.BufferedInputStream;
 import java.io.IOException;
-import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -200,31 +198,7 @@ public class PeliasRequest {
      * @throws IOException
      */
     public PeliasResponse call() throws IOException {
-        HttpURLConnection urlConnection = null;
-        BufferedInputStream bis = null;
-        IOException exception = null;
-        PeliasResponse response = null;
-
-        try {
-            urlConnection = (HttpURLConnection) mUrl.openConnection();
-            bis = new BufferedInputStream(urlConnection.getInputStream());
-            response = mReader.readValue(bis);
-        } catch (IOException e) {
-            exception = e;
-        } finally {
-            // Make sure we close the connection no matter what
-            if (bis != null) {
-                bis.close();
-            }
-            if (urlConnection != null) {
-                urlConnection.disconnect();
-            }
-        }
-        if (exception != null) {
-            throw exception;
-        } else {
-            return response;
-        }
+        return mReader.readValue(mUrl.openStream());
     }
 
     /**
