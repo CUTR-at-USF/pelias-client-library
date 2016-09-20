@@ -15,8 +15,8 @@
  */
 package edu.usf.cutr.pelias.test;
 
-import edu.usf.cutr.pelias.PeliasRequest;
-import edu.usf.cutr.pelias.PeliasResponse;
+import edu.usf.cutr.pelias.SearchRequest;
+import edu.usf.cutr.pelias.SearchResponse;
 import junit.framework.TestCase;
 import org.geojson.Feature;
 import org.geojson.Point;
@@ -25,9 +25,9 @@ import org.junit.Test;
 import java.io.IOException;
 
 /**
- * Tests for PeliasRequest and PeliasResponse
+ * Tests for SearchRequest and SearchResponse
  */
-public class PeliasTest extends TestCase {
+public class PeliasSearchTest extends TestCase {
 
     private static final String SIMPLE_SEARCH_ENDPOINT = "https://raw.githubusercontent.com/CUTR-at-USF/pelias-client-library/master/src/test/resources/simple-search.json";
     private static final String SEARCH_WITH_FOCUS_ENDPOINT = "https://raw.githubusercontent.com/CUTR-at-USF/pelias-client-library/master/src/test/resources/search-with-focus.json";
@@ -37,12 +37,12 @@ public class PeliasTest extends TestCase {
     @Override
     protected void setUp() {
         // For tests, make sure that we can parse all known properties
-        PeliasRequest.setFailOnUnknownProperties(true);
+        SearchRequest.setFailOnUnknownProperties(true);
     }
 
     @Test
     public void testSimpleSearch() throws IOException {
-        PeliasResponse r = new PeliasRequest.Builder(API_KEY, TEXT)
+        SearchResponse r = new SearchRequest.Builder(API_KEY, TEXT)
                 .setApiEndpoint(SIMPLE_SEARCH_ENDPOINT)
                 .build().call();
         assertEquals("0.1", r.getGeocoding().getVersion());
@@ -96,7 +96,7 @@ public class PeliasTest extends TestCase {
 
     @Test
     public void testSearchWithFocus() throws IOException {
-        PeliasResponse r = new PeliasRequest.Builder(API_KEY, TEXT)
+        SearchResponse r = new SearchRequest.Builder(API_KEY, TEXT)
                 .setApiEndpoint(SEARCH_WITH_FOCUS_ENDPOINT)
                 .build().call();
 

@@ -23,7 +23,7 @@ import java.util.Arrays;
 /**
  * Encapsulates a response from the Mapzen Pelias Search API - https://mapzen.com/documentation/search/search/
  */
-public class PeliasResponse {
+public class SearchResponse {
     Geocoding geocoding;
     String type;
     Feature[] features;
@@ -63,7 +63,7 @@ public class PeliasResponse {
 
     @Override
     public String toString() {
-        return "PeliasResponse{" +
+        return "SearchResponse{" +
                 "geocoding=" + geocoding +
                 ", type='" + type + '\'' +
                 ", features=" + Arrays.toString(features) +

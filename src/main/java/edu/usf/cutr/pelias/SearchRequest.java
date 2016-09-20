@@ -27,11 +27,11 @@ import java.net.URL;
 /**
  * Encapsulates a request to the Mapzen Pelias Search API - https://mapzen.com/documentation/search/search/
  */
-public class PeliasRequest {
+public class SearchRequest {
 
     private static ObjectMapper mMapper = new ObjectMapper()
             .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-    private static ObjectReader mReader = mMapper.readerFor(PeliasResponse.class);
+    private static ObjectReader mReader = mMapper.readerFor(SearchResponse.class);
 
     private URL mUrl;
 
@@ -141,10 +141,10 @@ public class PeliasRequest {
         }
 
         /**
-         * Builds the PeliasRequest using the specified parameters
-         * @return the PeliasRequest using the specified parameters
+         * Builds the SearchRequest using the specified parameters
+         * @return the SearchRequest using the specified parameters
          */
-        public PeliasRequest build() {
+        public SearchRequest build() {
             StringBuilder builder = new StringBuilder();
             builder.append(mApiEndPoint);
             builder.append("?text=");
@@ -180,11 +180,11 @@ public class PeliasRequest {
                 builder.append(mBoundaryMaxLon);
             }
 
-            return new PeliasRequest(builder.toString());
+            return new SearchRequest(builder.toString());
         }
     }
 
-    protected PeliasRequest(String url) {
+    protected SearchRequest(String url) {
         try {
             mUrl = new URL(url);
         } catch (MalformedURLException e) {
@@ -193,24 +193,24 @@ public class PeliasRequest {
     }
 
     /**
-     * Makes the request to the Pelias Search API, and returns a PeliasResponse parsed from the returned JSON
-     * @return a PeliasResponse parsed from the returned JSON
+     * Makes the request to the Pelias Search API, and returns a SearchResponse parsed from the returned JSON
+     * @return a SearchResponse parsed from the returned JSON
      * @throws IOException
      */
-    public PeliasResponse call() throws IOException {
+    public SearchResponse call() throws IOException {
         return mReader.readValue(mUrl.openStream());
     }
 
     /**
-     * Sets the Jackson value for "fail on unknown properties" for all PeliasRequest instances.  Note that while this
-     * method is threadsafe, it does not guarantee that existing instances of PeliasRequest using the ObjectReader won't
+     * Sets the Jackson value for "fail on unknown properties" for all SearchRequest instances.  Note that while this
+     * method is threadsafe, it does not guarantee that existing instances of SearchRequest using the ObjectReader won't
      * be negatively impacted / interrupted.  Default is false.
      *
      * @param value true if Jackson should fail on unknown properties, false of it should not (default is false)
      */
     public synchronized static void setFailOnUnknownProperties(boolean value) {
         mMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, value);
-        mReader = mMapper.readerFor(PeliasResponse.class);
+        mReader = mMapper.readerFor(SearchResponse.class);
     }
 
     /**
@@ -223,7 +223,7 @@ public class PeliasRequest {
         try {
             String apiKey = "search-FdGeV9U";
             String text = "London";
-            PeliasResponse response = new PeliasRequest.Builder(apiKey, text).build().call();
+            SearchResponse response = new SearchRequest.Builder(apiKey, text).build().call();
             System.out.println(response.toString());
         } catch (IOException e) {
             e.printStackTrace();
