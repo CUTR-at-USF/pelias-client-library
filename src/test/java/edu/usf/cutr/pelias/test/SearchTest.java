@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * Tests for SearchRequest and SearchResponse
  */
-public class PeliasSearchTest extends TestCase {
+public class SearchTest extends TestCase {
 
     private static final String SIMPLE_SEARCH_ENDPOINT = "https://raw.githubusercontent.com/CUTR-at-USF/pelias-client-library/master/src/test/resources/simple-search.json";
     private static final String SEARCH_WITH_FOCUS_ENDPOINT = "https://raw.githubusercontent.com/CUTR-at-USF/pelias-client-library/master/src/test/resources/search-with-focus.json";
