@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>edu.usf.cutr</groupId>
     <artifactId>pelias-client-library</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.0</version>
     <name>Pelias Client Library</name>
     <description>A Java client library for the Pelias geocoder</description>
 
