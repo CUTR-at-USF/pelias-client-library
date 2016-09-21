@@ -4,8 +4,32 @@
     <groupId>edu.usf.cutr</groupId>
     <artifactId>pelias-client-library</artifactId>
     <version>1.0.1-SNAPSHOT</version>
+
     <name>Pelias Client Library</name>
     <description>A Java client library for the Pelias geocoder</description>
+    <url>https://github.com/CUTR-at-USF/pelias-client-library</url>
+
+    <licenses>
+        <license>
+            <name>The Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <name>Sean J. Barbeau</name>
+            <email>sjbarbeau@gmail.com</email>
+            <organization>University of South Florida</organization>
+            <organizationUrl>http://www.cutr.usf.edu</organizationUrl>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:http://github.com/CUTR-at-USF/pelias-client-library.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/CUTR-at-USF/pelias-client-library.git</developerConnection>
+        <url>http://github.com/CUTR-at-USF/pelias-client-library</url>
+    </scm>
 
     <dependencies>
         <dependency>
