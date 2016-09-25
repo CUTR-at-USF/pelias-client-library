@@ -42,10 +42,10 @@ public class SearchRequest {
         private String mSources;
         private Double mFocusPointLat;
         private Double mFocusPointLon;
-        private String mBoundaryMinLat;
-        private String mBoundaryMinLon;
-        private String mBoundaryMaxLat;
-        private String mBoundaryMaxLon;
+        private Double mBoundaryMinLat;
+        private Double mBoundaryMinLon;
+        private Double mBoundaryMaxLat;
+        private Double mBoundaryMaxLon;
         private Integer mSize;
 
         /**
@@ -110,7 +110,7 @@ public class SearchRequest {
          * @param maxLon Maximum longitude of the bounding box
          * @return this same Builder so Builder calls can be chained
          */
-        public Builder setBoundaryRect(String minLat, String minLon, String maxLat, String maxLon) {
+        public Builder setBoundaryRect(Double minLat, Double minLon, Double maxLat, Double maxLon) {
             mBoundaryMinLat = minLat;
             mBoundaryMinLon = minLon;
             mBoundaryMaxLat = maxLat;
@@ -190,6 +190,15 @@ public class SearchRequest {
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }
+    }
+
+    /**
+     * Returns the URL that will be used in the API request
+     *
+     * @return the URL that will be used in the API request
+     */
+    URL getUrl() {
+        return mUrl;
     }
 
     /**
