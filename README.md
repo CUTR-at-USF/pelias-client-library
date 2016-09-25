@@ -145,7 +145,7 @@ To sign the application (required for distribution to Maven Central), you need t
         <activeByDefault>true</activeByDefault>
     </activation>
     <properties>
-        <gpg.executable>gpg2</gpg.executable>
+        <gpg.executable>gpg</gpg.executable>
         <gpg.passphrase>the_pass_phrase</gpg.passphrase>
     </properties>
 </profile>
