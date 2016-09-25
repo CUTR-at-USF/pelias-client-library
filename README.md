@@ -136,6 +136,21 @@ We need to provide Bintray username and API Key to the Maven `settings.xml` file
 </server>
 ```
 
+To sign the application (required for distribution to Maven Central), you need to add the following block as well (after [importing the CUTR key](http://central.sonatype.org/pages/working-with-pgp-signatures.html)):
+
+```
+<profile>
+    <id>ossrh</id>
+    <activation>
+        <activeByDefault>true</activeByDefault>
+    </activation>
+    <properties>
+        <gpg.executable>gpg2</gpg.executable>
+        <gpg.passphrase>the_pass_phrase</gpg.passphrase>
+    </properties>
+</profile>
+```
+
 ###### 4 - Run maven deploy
 
 Finally, we can run ```mvn deploy``` to complete publishing.
