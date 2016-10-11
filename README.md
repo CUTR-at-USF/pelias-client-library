@@ -7,6 +7,8 @@ You'll need [JDK 7 or higher](http://www.oracle.com/technetwork/java/javase/down
 
 ### Including this library in your application
 
+See the [pelias-client-library-demo](https://github.com/CUTR-at-USF/pelias-client-library-demo) project for an example of how to use this library.
+
 To add this library to your project using Maven, add the following to your `pom.xml` file:
 ~~~
 <dependencies>
