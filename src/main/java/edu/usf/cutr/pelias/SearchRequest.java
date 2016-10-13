@@ -22,7 +22,7 @@ import com.fasterxml.jackson.databind.ObjectReader;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
-
+import java.net.URLEncoder;
 
 /**
  * Encapsulates a request to the Mapzen Pelias Search API - https://mapzen.com/documentation/search/search/
@@ -144,11 +144,11 @@ public class SearchRequest {
          * Builds the SearchRequest using the specified parameters
          * @return the SearchRequest using the specified parameters
          */
-        public SearchRequest build() {
+        public SearchRequest build() throws java.io.UnsupportedEncodingException {
             StringBuilder builder = new StringBuilder();
             builder.append(mApiEndPoint);
             builder.append("?text=");
-            builder.append(mText);
+            builder.append( URLEncoder.encode(mText, "UTF-8") );
             builder.append("&api_key=");
             builder.append(mApiKey);
 
