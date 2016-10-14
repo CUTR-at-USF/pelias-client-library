@@ -193,5 +193,21 @@ public class SearchTest extends TestCase {
                         "&boundary.rect.min_lat=27.959868&boundary.rect.min_lon=-82.515286" +
                         "&boundary.rect.max_lat=28.131471&boundary.rect.max_lon=-82.367646",
                 request.getUrl().toString());
+
+        request = new SearchRequest.Builder(API_KEY, "burger king")
+                .setApiEndpoint(SEARCH_WITH_FOCUS_ENDPOINT)
+                .setFocusPoint(28.061062d, -82.4132d)
+                .setSources("osm")
+                .setSize(35)
+                .setBoundaryRect(27.959868, -82.515286, 28.131471, -82.367646)
+                .build();
+
+        assertEquals("https://raw.githubusercontent.com/CUTR-at-USF/pelias-client-library/master/src/test/resources/" +
+                        "search-with-focus.json?text=burger+king&api_key=dummyApiKey&sources=osm&size=35" +
+                        "&focus.point.lat=28.061062&focus.point.lon=-82.4132" +
+                        "&boundary.rect.min_lat=27.959868&boundary.rect.min_lon=-82.515286" +
+                        "&boundary.rect.max_lat=28.131471&boundary.rect.max_lon=-82.367646",
+                request.getUrl().toString());
+        
     }
 }
