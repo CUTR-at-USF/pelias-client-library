@@ -56,7 +56,14 @@ public class SearchRequest {
          */
         public Builder(String apiKey, String text) {
             mApiKey = apiKey;
-            mText = text;
+
+            try {
+                mText = URLEncoder.encode(text, "UTF-8");
+            } catch (java.io.UnsupportedEncodingException e) {
+                   System.err.println( String.format("URLEncoder.encode failed (%s), using unencoded text parameter.", e.getMessage()) );
+                   mText = text;
+            }
+
         }
 
         /**
@@ -144,11 +151,11 @@ public class SearchRequest {
          * Builds the SearchRequest using the specified parameters
          * @return the SearchRequest using the specified parameters
          */
-        public SearchRequest build() throws java.io.UnsupportedEncodingException {
+        public SearchRequest build() {
             StringBuilder builder = new StringBuilder();
             builder.append(mApiEndPoint);
             builder.append("?text=");
-            builder.append( URLEncoder.encode(mText, "UTF-8") );
+            builder.append(mText);
             builder.append("&api_key=");
             builder.append(mApiKey);
 
