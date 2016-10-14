@@ -211,7 +211,7 @@ public class SearchRequest {
     /**
      * Makes the request to the Pelias Search API, and returns a SearchResponse parsed from the returned JSON
      * @return a SearchResponse parsed from the returned JSON
-     * @throws IOException
+     * @throws IOException if there is an exception making the request or reading the response from the server
      */
     public SearchResponse call() throws IOException {
         return mReader.readValue(mUrl.openStream());
@@ -233,7 +233,7 @@ public class SearchRequest {
      * A temporary method to test requests
      * TODO - remove this method and create demo project
      *
-     * @param args
+     * @param args main program arguments
      */
     public static void main(String[] args) {
         try {
