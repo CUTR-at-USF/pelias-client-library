@@ -194,6 +194,7 @@ public class SearchTest extends TestCase {
                         "&boundary.rect.max_lat=28.131471&boundary.rect.max_lon=-82.367646",
                 request.getUrl().toString());
 
+        // Test space in text parameter
         request = new SearchRequest.Builder(API_KEY, "burger king")
                 .setApiEndpoint(SEARCH_WITH_FOCUS_ENDPOINT)
                 .setFocusPoint(28.061062d, -82.4132d)
