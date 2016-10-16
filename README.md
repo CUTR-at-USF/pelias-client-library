@@ -17,7 +17,6 @@ To add this library to your project using Maven, add the following to your `pom.
       <groupId>edu.usf.cutr.pelias</groupId>    
       <artifactId>pelias-client-library</artifactId>    
       <version>1.0.0</version>
-      <type>pom</type>
   </dependency>
 </dependencies>
 ~~~
