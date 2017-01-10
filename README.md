@@ -56,7 +56,7 @@ The below example shows how to call the Pelias Search API.
 ~~~
 String apiKey = "YourKeyHere";
 String text = "London";
-SearchResponse response = new SearchRequest.Builder(apiKey, text).build().call();
+PeliasResponse response = new SearchRequest.Builder(apiKey, text).build().call();
 System.out.println(response.toString());
 ~~~
 
