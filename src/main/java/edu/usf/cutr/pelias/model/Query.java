@@ -38,6 +38,11 @@ public class Query {
     String[] sources;
     String text;
 
+    @JsonProperty("parsed_text")
+    ParsedText parsedText;
+
+    String[] tokens;
+
     public String getText() {
         return text;
     }
@@ -118,6 +123,22 @@ public class Query {
         this.sources = sources;
     }
 
+    public ParsedText getParsedText() {
+        return parsedText;
+    }
+
+    public void setParsedText(ParsedText parsedText) {
+        this.parsedText = parsedText;
+    }
+
+    public String[] getTokens() {
+        return tokens;
+    }
+
+    public void setTokens(String[] tokens) {
+        this.tokens = tokens;
+    }
+
     @Override
     public String toString() {
         return "Query{" +
@@ -131,6 +152,7 @@ public class Query {
                 ", size=" + size +
                 ", sources=" + Arrays.toString(sources) +
                 ", text='" + text + '\'' +
+                ", parsedText=" + parsedText +
                 '}';
     }
 }

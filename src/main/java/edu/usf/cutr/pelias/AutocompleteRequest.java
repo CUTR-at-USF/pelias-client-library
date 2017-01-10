@@ -16,26 +16,36 @@
 package edu.usf.cutr.pelias;
 
 /**
- * Encapsulates a request to the Mapzen Pelias Search API - https://mapzen.com/documentation/search/search/
+ * Encapsulates a request to the Mapzen Pelias Autocomplete API - https://mapzen.com/documentation/search/autocomplete/
  */
-public class SearchRequest extends PeliasRequest {
+public class AutocompleteRequest extends PeliasRequest {
 
     public static class Builder extends PeliasRequest.Builder {
 
         /**
-         * A Builder for making a request to the Pelias Search API
+         * A Builder for making a request to the Pelias Autocomplete API
          *
          * @param apiKey the API key to be used in the request
          * @param text   the text to search for
          */
         public Builder(String apiKey, String text) {
             super(apiKey, text);
-            // Set the default API URL for Search requests
-            mApiEndPoint = "https://search.mapzen.com/v1/search";
+            // Set the default API URL for Autocomplete requests
+            mApiEndPoint = "https://search.mapzen.com/v1/autocomplete";
+        }
+
+        /**
+         * "size" parameter is not supported for /autocomplete requests.  Calls to this method will result in an
+         * UnsupportedOperationException.
+         *
+         * @param size unsupported
+         */
+        public PeliasRequest.Builder setSize(Integer size) {
+            throw new UnsupportedOperationException("'size' parameter is not supported for /autocomplete requests");
         }
     }
 
-    protected SearchRequest(String url) {
+    protected AutocompleteRequest(String url) {
         super(url);
     }
 }

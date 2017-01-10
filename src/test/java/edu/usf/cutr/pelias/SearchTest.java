@@ -23,7 +23,7 @@ import org.junit.Test;
 import java.io.IOException;
 
 /**
- * Tests for SearchRequest and SearchResponse
+ * Tests for SearchRequest and PeliasResponse
  */
 public class SearchTest extends TestCase {
 
@@ -40,7 +40,7 @@ public class SearchTest extends TestCase {
 
     @Test
     public void testSimpleSearch() throws IOException {
-        SearchRequest request = new SearchRequest.Builder(API_KEY, TEXT)
+        PeliasRequest request = new SearchRequest.Builder(API_KEY, TEXT)
                 .setApiEndpoint(SIMPLE_SEARCH_ENDPOINT)
                 .build();
 
@@ -48,7 +48,7 @@ public class SearchTest extends TestCase {
                         "simple-search.json?text=subway&api_key=dummyApiKey",
                 request.getUrl().toString());
 
-        SearchResponse response = request.call();
+        PeliasResponse response = request.call();
 
         assertEquals("0.1", response.getGeocoding().getVersion());
         assertEquals("https://search.mapzen.com/v1/attribution", response.getGeocoding().getAttribution());
@@ -101,7 +101,7 @@ public class SearchTest extends TestCase {
 
     @Test
     public void testSearchWithFocus() throws IOException {
-        SearchRequest request = new SearchRequest.Builder(API_KEY, TEXT)
+        PeliasRequest request = new SearchRequest.Builder(API_KEY, TEXT)
                 .setApiEndpoint(SEARCH_WITH_FOCUS_ENDPOINT)
                 .setFocusPoint(28.061062d, -82.4132d)
                 .build();
@@ -110,7 +110,7 @@ public class SearchTest extends TestCase {
                         "search-with-focus.json?text=subway&api_key=dummyApiKey&focus.point.lat=28.061062&focus.point.lon=-82.4132",
                 request.getUrl().toString());
 
-        SearchResponse response = request.call();
+        PeliasResponse response = request.call();
 
         assertEquals("0.1", response.getGeocoding().getVersion());
         assertEquals("https://search.mapzen.com/v1/attribution", response.getGeocoding().getAttribution());
@@ -179,7 +179,7 @@ public class SearchTest extends TestCase {
 
     @Test
     public void testRequestParameters() throws IOException {
-        SearchRequest request = new SearchRequest.Builder(API_KEY, TEXT)
+        PeliasRequest request = new SearchRequest.Builder(API_KEY, TEXT)
                 .setApiEndpoint(SEARCH_WITH_FOCUS_ENDPOINT)
                 .setFocusPoint(28.061062d, -82.4132d)
                 .setSources("osm")
