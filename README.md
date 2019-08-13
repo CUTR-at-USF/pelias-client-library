@@ -137,6 +137,10 @@ We need to provide Bintray username and API Key to the Maven `settings.xml` file
 </server>
 ```
 
+You'll need to import the CUTR secret key if it's a new machine (first time only):
+
+`gpg --import C:\xxxxx\CUTR\Maven\private.key`
+
 To sign the application (required for distribution to Maven Central), you need to add the following block as well (after [importing the CUTR key](http://central.sonatype.org/pages/working-with-pgp-signatures.html)):
 
 ```
