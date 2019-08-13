@@ -14,7 +14,7 @@ To add this library to your project using Maven, add the following to your `pom.
 <dependencies>
   <!-- Pelias Client Library -->
   <dependency>
-      <groupId>edu.usf.cutr.pelias</groupId>    
+      <groupId>edu.usf.cutr</groupId>    
       <artifactId>pelias-client-library</artifactId>    
       <version>1.0.2</version>
   </dependency>
@@ -44,7 +44,7 @@ android {
 dependencies {
     ...
     // Pelias Client library
-    compile 'edu.usf.cutr.pelias:pelias-client-library:1.0.2'
+    compile 'edu.usf.cutr:pelias-client-library:1.0.2'
 }
 ~~~
 
