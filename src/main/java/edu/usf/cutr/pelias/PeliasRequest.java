@@ -27,7 +27,7 @@ import java.net.URLEncoder;
 /**
  * Encapsulates common elements of requests across multiple Mapzen Pelias APIs (e.g., Search, Autocomplete)
  */
-class PeliasRequest {
+public class PeliasRequest {
     private static ObjectMapper mMapper = new ObjectMapper()
             .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
     private static ObjectReader mReader = mMapper.readerFor(PeliasResponse.class);
