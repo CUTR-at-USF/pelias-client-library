@@ -1,5 +1,5 @@
 # pelias-client-library [![Build Status](https://travis-ci.org/CUTR-at-USF/pelias-client-library.svg?branch=master)](https://travis-ci.org/CUTR-at-USF/pelias-client-library) [ ![Download](https://api.bintray.com/packages/cutr-at-usf/cutr-mvn-repo/pelias-client-library/images/download.svg) ](https://bintray.com/cutr-at-usf/cutr-mvn-repo/pelias-client-library/_latestVersion)
-A Java library that makes it easy to call the [Mapzen Pelias Search API](https://mapzen.com/documentation/search/search/)
+A Java library that makes it easy to call the [Pelias Search and Autocomplete APIs](https://github.com/pelias/documentation/blob/master/README.md)
 
 ### Requirements
 
@@ -57,6 +57,8 @@ The below example shows how to call the Pelias Search API.
 String apiKey = "YourKeyHere";
 String text = "London";
 PeliasResponse response = new SearchRequest.Builder(apiKey, text).build().call();
+System.out.println(response.toString());
+PeliasResponse response = new AutocompleteRequest.Builder(apiKey, text).build().call();
 System.out.println(response.toString());
 ~~~
 
