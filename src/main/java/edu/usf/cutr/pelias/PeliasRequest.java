@@ -46,6 +46,7 @@ public class PeliasRequest {
         private Double mBoundaryMaxLat;
         private Double mBoundaryMaxLon;
         private Integer mSize;
+        private String mCategories;
 
         /**
          * A Builder for making a request to the Pelias Search API
@@ -148,6 +149,21 @@ public class PeliasRequest {
         }
 
         /**
+         * Sets the "categories" parameter that will be used for the API call. If an empty string, all categories will
+         * be returned from the API. If this method isn't called, the categories element will not appear in the
+         * response.
+         *
+         * @param categories the "categories" parameter that will be used for the API call. If an empty string, all
+         *                   categories will be returned from the API. If this method isn't called, the categories
+         *                   element will not appear in the response.
+         * @return this same Builder so Builder calls can be chained
+         */
+        public Builder setCategories(String categories) {
+            mCategories = categories;
+            return this;
+        }
+
+        /**
          * Builds the PeliasRequest using the specified parameters
          *
          * @return the PeliasRequest using the specified parameters
@@ -186,6 +202,11 @@ public class PeliasRequest {
                 builder.append(mBoundaryMaxLat);
                 builder.append("&boundary.rect.max_lon=");
                 builder.append(mBoundaryMaxLon);
+            }
+
+            if (mCategories != null) {
+                builder.append("&categories=");
+                builder.append(mCategories);
             }
 
             return new PeliasRequest(builder.toString());

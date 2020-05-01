@@ -21,6 +21,7 @@ import org.geojson.Point;
 import org.junit.Test;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 /**
  * Tests for AutocompleteRequest and PeliasResponse
@@ -29,6 +30,7 @@ public class AutocompleteTest extends TestCase {
 
     private static final String AUTOCOMPLETE_WITH_FOCUS_ENDPOINT = "https://raw.githubusercontent.com/CUTR-at-USF/pelias-client-library/master/src/test/resources/autocomplete-with-focus.json";
     private static final String AUTOCOMPLETE_WITH_SOURCES_ENDPOINT = "https://raw.githubusercontent.com/CUTR-at-USF/pelias-client-library/master/src/test/resources/autocomplete-with-sources.json";
+    private static final String AUTOCOMPLETE_WITH_CATEGORIES_ENDPOINT = "https://raw.githubusercontent.com/CUTR-at-USF/pelias-client-library/master/src/test/resources/autocomplete-with-categories.json";
 
     private static final String API_KEY = "dummyApiKey";
     private static final String TEXT = "union square";
@@ -36,7 +38,7 @@ public class AutocompleteTest extends TestCase {
     @Override
     protected void setUp() {
         // For tests, make sure that we can parse all known properties
-        SearchRequest.setFailOnUnknownProperties(true);
+        SearchRequest.setFailOnUnknownProperties(false);
     }
 
     @Test
@@ -187,19 +189,74 @@ public class AutocompleteTest extends TestCase {
     }
 
     @Test
+    public void testAutocompleteWithCategories() throws IOException {
+        PeliasRequest request = new SearchRequest.Builder(API_KEY, TEXT)
+                .setApiEndpoint(AUTOCOMPLETE_WITH_CATEGORIES_ENDPOINT)
+                .setFocusPoint(32.85254317331236d, -117.10268815207026d)
+                .setCategories("")
+                .build();
+
+        assertEquals("https://raw.githubusercontent.com/CUTR-at-USF/pelias-client-library/master/src/test/" +
+                        "resources/autocomplete-with-categories.json?text=union+square&api_key=dummyApiKey&focus.point.lat=32.85254317331236&focus.point.lon=-117.10268815207026&categories=",
+                request.getUrl().toString());
+
+        PeliasResponse response = request.call();
+
+        assertEquals("0.2", response.getGeocoding().getVersion());
+        assertEquals("https://geocode.earth/guidelines", response.getGeocoding().getAttribution());
+        assertEquals("iris ave", response.getGeocoding().getQuery().getText());
+        assertEquals(false, response.getGeocoding().getQuery().isPrivate());
+        assertEquals(32.85254317331236f, response.getGeocoding().getQuery().getFocusPointLat());
+        assertEquals(-117.10268815207026f, response.getGeocoding().getQuery().getFocusPointLon());
+        assertEquals("Pelias", response.getGeocoding().getEngine().getName());
+        assertEquals("Mapzen", response.getGeocoding().getEngine().getAuthor());
+        assertEquals("1.0", response.getGeocoding().getEngine().getVersion());
+        assertEquals(1588344563735L, response.getGeocoding().getTimestamp());
+        assertEquals("FeatureCollection", response.getType());
+
+        Point p;
+        Feature[] f = response.getFeatures();
+
+        p = (Point) f[0].getGeometry();
+        assertEquals(32.56993, p.getCoordinates().getLatitude());
+        assertEquals(-117.067507, p.getCoordinates().getLongitude());
+        assertEquals("node/1815010914", (String) f[0].getProperties().get("id"));
+        assertEquals("venue", f[0].getProperties().get("layer"));
+        assertEquals("Iris Avenue", f[0].getProperties().get("name"));
+        assertEquals(31.632, f[0].getProperties().get("distance"));
+        assertEquals("point", f[0].getProperties().get("accuracy"));
+        assertEquals("United States", f[0].getProperties().get("country"));
+        assertEquals("California", f[0].getProperties().get("region"));
+        assertEquals("San Diego County", f[0].getProperties().get("county"));
+        assertEquals("Iris Avenue, San Diego, CA, USA", f[0].getProperties().get("label"));
+
+        ArrayList<String> categories = (ArrayList<String>) f[0].getProperties().get("category");
+        assertEquals("transport", categories.get(0));
+        assertEquals("transport:public", categories.get(1));
+
+        Float[] bbox = response.getBbox();
+        assertEquals(-122.247064F, bbox[0]);
+        assertEquals(32.569744F, bbox[1]);
+        assertEquals(-105.268425F, bbox[2]);
+        assertEquals(40.036903F, bbox[3]);
+    }
+
+    @Test
     public void testRequestParameters() throws IOException {
         PeliasRequest request = new AutocompleteRequest.Builder(API_KEY, TEXT)
                 .setApiEndpoint(AUTOCOMPLETE_WITH_FOCUS_ENDPOINT)
                 .setFocusPoint(28.061062d, -82.4132d)
                 .setSources("osm")
                 .setBoundaryRect(27.959868, -82.515286, 28.131471, -82.367646)
+                .setCategories("")
                 .build();
 
         assertEquals("https://raw.githubusercontent.com/CUTR-at-USF/pelias-client-library/master/src/test/resources/" +
                         "autocomplete-with-focus.json?text=union+square&api_key=dummyApiKey&sources=osm" +
                         "&focus.point.lat=28.061062&focus.point.lon=-82.4132" +
                         "&boundary.rect.min_lat=27.959868&boundary.rect.min_lon=-82.515286" +
-                        "&boundary.rect.max_lat=28.131471&boundary.rect.max_lon=-82.367646",
+                        "&boundary.rect.max_lat=28.131471&boundary.rect.max_lon=-82.367646" +
+                        "&categories=",
                 request.getUrl().toString());
 
         // Test space in text parameter
