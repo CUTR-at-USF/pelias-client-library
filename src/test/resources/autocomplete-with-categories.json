@@ -3,7 +3,6 @@
     "version": "0.2",
     "attribution": "https://geocode.earth/guidelines",
     "query": {
-      "enableDebug": false,
       "text": "iris ave",
       "parser": "pelias",
       "parsed_text": {
