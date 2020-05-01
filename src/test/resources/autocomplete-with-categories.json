@@ -5,7 +5,6 @@
     "query": {
       "text": "iris ave",
       "parsed_text": {
-        "subject": "iris ave",
         "street": "iris ave"
       },
       "size": 10,
