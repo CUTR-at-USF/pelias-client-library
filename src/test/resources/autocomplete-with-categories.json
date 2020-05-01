@@ -8,19 +8,9 @@
         "street": "iris ave"
       },
       "size": 10,
-      "layers": [
-        "venue"
-      ],
       "private": false,
       "focus.point.lat": 32.85254317331236,
-      "focus.point.lon": -117.10268815207026,
-      "categories": [],
-      "lang": {
-        "name": "English",
-        "iso6391": "en",
-        "iso6393": "eng",
-        "defaulted": false
-      }
+      "focus.point.lon": -117.10268815207026
     },
     "warnings": [
       "Categories parameter left blank, showing results from all categories."
