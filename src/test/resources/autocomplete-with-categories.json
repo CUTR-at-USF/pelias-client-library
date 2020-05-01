@@ -4,7 +4,6 @@
     "attribution": "https://geocode.earth/guidelines",
     "query": {
       "text": "iris ave",
-      "parser": "pelias",
       "parsed_text": {
         "subject": "iris ave",
         "street": "iris ave"

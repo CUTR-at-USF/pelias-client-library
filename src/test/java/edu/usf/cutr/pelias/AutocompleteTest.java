@@ -38,7 +38,7 @@ public class AutocompleteTest extends TestCase {
     @Override
     protected void setUp() {
         // For tests, make sure that we can parse all known properties
-        SearchRequest.setFailOnUnknownProperties(false);
+        SearchRequest.setFailOnUnknownProperties(true);
     }
 
     @Test
