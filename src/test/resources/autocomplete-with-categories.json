@@ -12,9 +12,6 @@
       "focus.point.lat": 32.85254317331236,
       "focus.point.lon": -117.10268815207026
     },
-    "warnings": [
-      "Categories parameter left blank, showing results from all categories."
-    ],
     "engine": {
       "name": "Pelias",
       "author": "Mapzen",
